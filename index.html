@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李明 · 个人名片</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #181b22;
+      --card-hover: #1e222b;
+      --text: #e8eaed;
+      --muted: #9aa0aa;
+      --accent: #6c8cff;
+      --accent-2: #a86cff;
+      --border: rgba(255, 255, 255, 0.08);
+      --radius: 18px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* 背景光晕 */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: 0;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    body::before {
+      width: 420px; height: 420px;
+      background: var(--accent);
+      top: -120px; left: -100px;
+    }
+    body::after {
+      width: 380px; height: 380px;
+      background: var(--accent-2);
+      bottom: -140px; right: -100px;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 760px;
+      background: linear-gradient(145deg, var(--card), #14171d);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 44px 48px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+      animation: fadeUp 0.7s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .avatar {
+      width: 104px; height: 104px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 8px 28px rgba(108, 140, 255, 0.35);
+      border: 3px solid rgba(255,255,255,0.12);
+    }
+
+    .name { font-size: 30px; font-weight: 700; letter-spacing: 0.5px; }
+    .title {
+      margin-top: 6px;
+      font-size: 15px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .location {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .bio {
+      margin: 28px 0;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #c5c9d0;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .skill {
+      padding: 7px 15px;
+      border-radius: 999px;
+      background: rgba(108, 140, 255, 0.12);
+      border: 1px solid rgba(108, 140, 255, 0.25);
+      color: #b9c6ff;
+      font-size: 13px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .skill:hover { transform: translateY(-2px); background: rgba(108, 140, 255, 0.22); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .stat:hover { background: rgba(255,255,255,0.06); }
+    .stat-num {
+      font-size: 26px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(108, 140, 255, 0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(108, 140, 255, 0.45); }
+    .btn-ghost {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+    @media (max-width: 600px) {
+      .card { padding: 28px 22px; }
+      .top { flex-direction: column; text-align: center; gap: 16px; }
+      .location { justify-content: center; }
+      .stats { grid-template-columns: 1fr; }
+      .contact { justify-content: center; }
+      .name { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="top">
+      <div class="avatar">李</div>
+      <div>
+        <div class="name">李明</div>
+        <div class="title">高级前端工程师 · 产品设计师</div>
+        <div class="location">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          中国 · 深圳
+        </div>
+      </div>
+    </div>
+
+    <p class="bio">
+      热爱创造有温度的数字产品。8 年互联网经验，专注于 Web 前端架构与用户体验设计。
+      相信好的产品始于对细节的执着，也乐于把复杂的问题变得简单。目前正在探索 AI 与设计的交叉领域。
+    </p>
+
+    <div class="section-label">专业技能</div>
+    <div class="skills">
+      <span class="skill">JavaScript / TypeScript</span>
+      <span class="skill">React</span>
+      <span class="skill">Vue.js</span>
+      <span class="skill">Node.js</span>
+      <span class="skill">UI / UX 设计</span>
+      <span class="skill">Figma</span>
+      <span class="skill">性能优化</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-num">8+</div><div class="stat-label">年从业经验</div></div>
+      <div class="stat"><div class="stat-num">40+</div><div class="stat-label">上线项目</div></div>
+      <div class="stat"><div class="stat-num">12k</div><div class="stat-label">GitHub Star</div></div>
+    </div>
+
+    <div class="contact">
+      <a class="btn btn-primary" href="mailto:liming@example.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        联系我
+      </a>
+      <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.11.38-2 1.01-2.71-.1-.25-.44-1.29.1-2.68 0 0 .82-.26 2.69 1a9.3 9.3 0 0 1 4.9 0c1.87-1.26 2.69-1 2.69-1 .54 1.39.2 2.43.1 2.68.63.71 1.01 1.6 1.01 2.71 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .28.16.59.67.5A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg>
+        GitHub
+      </a>
+      <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h6"/></svg>
+        个人博客
+      </a>
+    </div>
+  </main>
+</body>
+</html>
