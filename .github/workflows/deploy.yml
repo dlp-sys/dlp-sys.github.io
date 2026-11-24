@@ -21,13 +21,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: blog-src/package-lock.json
+
+      - name: Install dependencies
+        working-directory: blog-src
+        run: npm ci
+
+      - name: Build blog
+        working-directory: blog-src
+        run: npx hexo generate
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site/blog
+          cp index.html _site/index.html
+          cp -r blog-src/public/. _site/blog/
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
   deploy:
     needs: build

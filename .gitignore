@@ -1,0 +1,8 @@
+# Hexo 构建产物与依赖
+_site/
+node_modules/
+public/
+db.json
+*.log
+.DS_Store
+Thumbs.db
