@@ -35,9 +35,9 @@ date: 2026-11-24 10:00:00
 
 ## 联系我
 
-- 邮箱：135******09@163.com
-- 微信：135******09
-- 电话：135******09
+- 邮箱：13598727809@163.com
+- 微信：13598727809
+- 电话：13598727809
 - GitHub：[@dlp-sys](https://github.com/dlp-sys)
 - 个人主页：[dlp-sys.github.io](https://dlp-sys.github.io/)
 - 个人博客：[Blog](https://dlp-sys.github.io/blog/)
