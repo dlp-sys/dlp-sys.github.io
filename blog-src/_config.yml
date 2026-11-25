@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 李明的博客
-subtitle: 记录技术与生活
-description: 一个前端工程师的技术笔记与生活感悟
-keywords: 前端, 技术, 博客, 生活
-author: 李明
+title: 鹏飞的博客
+subtitle: 嵌入式开发技术笔记
+description: 一个嵌入式软件工程师的技术笔记与成长记录
+keywords: 嵌入式, MCU, 固件, FreeRTOS, STM32, 技术
+author: 鹏飞
 language: zh-CN
 timezone: Asia/Shanghai
 
