@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="极客选品 - 专注数码科技好物，手机、电脑、耳机、智能穿戴一站购齐。">
+  <title>极客选品 · 数码科技好物商城</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <!-- 顶部公告 -->
+  <div class="announcement">
+    <div class="container announcement-inner">
+      <span>全场数码好物限时优惠 · 新人注册即领 100 元礼包</span>
+      <span class="announcement-right">正品保障 · 顺丰包邮 · 7 天无理由退换</span>
+    </div>
+  </div>
+
+  <!-- 导航栏 -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="极客选品首页">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg>
+        </span>
+        <span class="brand-text">
+          <strong>极客选品</strong>
+          <small>GEEK SELECT</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#top" class="active">首页</a>
+        <a href="#categories">商品分类</a>
+        <a href="#products">热门商品</a>
+        <a href="#promotions">促销活动</a>
+      </nav>
+
+      <div class="header-actions">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="search" id="searchInput" placeholder="搜索数码好物..." aria-label="搜索商品">
+        </label>
+        <button class="icon-btn" id="cartBtn" aria-label="打开购物车">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2.5 3h2.2l2.2 12.2a2 2 0 0 0 2 1.7h8.6a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+        <button class="btn btn-primary login-btn" id="loginBtn">登录 / 注册</button>
+        <div class="user-menu hidden" id="userMenu">
+          <button class="user-trigger" id="userTrigger" aria-expanded="false">
+            <span class="avatar" id="userAvatar">G</span>
+            <span class="user-name" id="userName">用户</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="user-dropdown" id="userDropdown">
+            <div class="dropdown-head"><strong id="dropdownName">欢迎回来</strong><span id="dropdownPhone">—</span></div>
+            <button data-action="orders">我的订单</button>
+            <button data-action="coupons">我的优惠券</button>
+            <button data-action="logout" class="danger">退出登录</button>
+          </div>
+        </div>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 轮播图 -->
+    <section class="hero-section container" aria-label="首页轮播图">
+      <div class="hero" id="hero">
+        <div class="hero-slide active" data-slide="0">
+          <img src="assets/banner-1.png" alt="轻薄笔记本与降噪耳机" class="hero-img">
+          <div class="hero-content">
+            <span class="hero-tag">NEW ARRIVAL · 新品上线</span>
+            <h1>轻薄本 + 降噪耳机<br>开启高效新日常</h1>
+            <p>轻至 1.2kg 的便携机身，搭配沉浸式主动降噪，办公与创作都从容。</p>
+            <div class="hero-buttons">
+              <a href="#products" class="btn btn-primary btn-lg">立即选购</a>
+              <a href="#promotions" class="btn btn-ghost btn-lg">查看活动</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide" data-slide="1">
+          <img src="assets/banner-2.png" alt="旗舰智能手机" class="hero-img">
+          <div class="hero-content">
+            <span class="hero-tag accent">HOT SALE · 限时直降</span>
+            <h1>旗舰影像 触手可及<br>记录每一刻精彩</h1>
+            <p>高刷全面屏、旗舰三摄与全天候续航，现在下单立享限时优惠价。</p>
+            <div class="hero-buttons">
+              <a href="#products" class="btn btn-primary btn-lg">抢先体验</a>
+              <a href="#products" class="btn btn-ghost btn-lg">了解更多</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide" data-slide="2">
+          <img src="assets/banner-3.png" alt="机械键盘与无线鼠标" class="hero-img">
+          <div class="hero-content">
+            <span class="hero-tag warm">DESK SETUP · 桌面升级</span>
+            <h1>手感与效率兼得<br>打造理想工作台</h1>
+            <p>客制化机械键盘搭配轻量化无线鼠标，每一次敲击都恰到好处。</p>
+            <div class="hero-buttons">
+              <a href="#products" class="btn btn-primary btn-lg">选购套装</a>
+              <a href="#promotions" class="btn btn-ghost btn-lg">领券更省</a>
+            </div>
+          </div>
+        </div>
+        <button class="hero-arrow prev" id="heroPrev" aria-label="上一张">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg>
+        </button>
+        <button class="hero-arrow next" id="heroNext" aria-label="下一张">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>
+        </button>
+        <div class="hero-dots" id="heroDots" role="tablist" aria-label="轮播图切换"></div>
+      </div>
+    </section>
+
+    <!-- 服务保障 -->
+    <section class="service-strip container" aria-label="服务保障">
+      <div class="service-item">
+        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 20 6v5.5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6l8-3.5Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div><strong>正品保障</strong><span>官方授权 假一赔十</span></div>
+      </div>
+      <div class="service-item">
+        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg></span>
+        <div><strong>极速发货</strong><span>当日下单 次日送达</span></div>
+      </div>
+      <div class="service-item">
+        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11a9 9 0 1 1 2.6 6.4"/><path d="M3 18v-5h5"/></svg></span>
+        <div><strong>7 天无理由</strong><span>安心购物 无忧退换</span></div>
+      </div>
+      <div class="service-item">
+        <span class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 10h8M8 13h5"/></svg></span>
+        <div><strong>专属客服</strong><span>7×12 小时在线服务</span></div>
+      </div>
+    </section>
+
+    <!-- 商品分类 -->
+    <section class="section container" id="categories">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">CATEGORIES</span>
+          <h2>商品分类</h2>
+          <p>精选六大品类，找到属于你的下一件数码好物</p>
+        </div>
+        <a href="#products" class="text-link">全部商品 <span>→</span></a>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <!-- 热门商品 -->
+    <section class="section container" id="products">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">BEST SELLERS</span>
+          <h2>热门商品</h2>
+          <p>大家都在买的高口碑数码好物</p>
+        </div>
+        <a href="#promotions" class="text-link">查看优惠 <span>→</span></a>
+      </div>
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-chip active" data-category="all">全部商品</button>
+        <button class="filter-chip" data-category="phone">手机通讯</button>
+        <button class="filter-chip" data-category="audio">影音耳机</button>
+        <button class="filter-chip" data-category="computer">电脑办公</button>
+        <button class="filter-chip" data-category="wearable">智能穿戴</button>
+        <button class="filter-chip" data-category="accessory">键鼠配件</button>
+        <button class="filter-chip" data-category="camera">摄影摄像</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state hidden" id="emptyState">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <p>没有找到相关商品，换个关键词试试吧</p>
+        <button class="btn btn-outline" id="resetFilterBtn">查看全部商品</button>
+      </div>
+    </section>
+
+    <!-- 促销活动 -->
+    <section class="section container" id="promotions">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">SPECIAL OFFERS</span>
+          <h2>促销活动</h2>
+          <p>限时好价，先到先得</p>
+        </div>
+        <a href="#products" class="text-link">更多好物 <span>→</span></a>
+      </div>
+
+      <div class="flash-panel">
+        <div class="flash-head">
+          <div class="flash-title">
+            <span class="flash-bolt">⚡</span>
+            <div>
+              <h3>限时抢购</h3>
+              <p>精选爆款，折扣仅在本场有效</p>
+            </div>
+          </div>
+          <div class="countdown" id="countdown" aria-label="活动倒计时">
+            <span class="countdown-label">距结束</span>
+            <b id="cdHour">00</b><i>:</i><b id="cdMin">00</b><i>:</i><b id="cdSec">00</b>
+          </div>
+        </div>
+        <div class="flash-grid" id="flashGrid"></div>
+      </div>
+
+      <div class="coupon-grid" id="couponGrid">
+        <div class="coupon-card coupon-blue">
+          <div class="coupon-info"><span>新人专享券</span><strong>¥100</strong><small>满 ¥999 可用</small></div>
+          <button class="coupon-btn" data-coupon="新人专享券 · 满999减100">立即领取</button>
+        </div>
+        <div class="coupon-card coupon-orange">
+          <div class="coupon-info"><span>数码狂欢券</span><strong>¥200</strong><small>满 ¥2999 可用</small></div>
+          <button class="coupon-btn" data-coupon="数码狂欢券 · 满2999减200">立即领取</button>
+        </div>
+        <div class="coupon-card coupon-dark">
+          <div class="coupon-info"><span>配件尝鲜券</span><strong>¥50</strong><small>满 ¥399 可用</small></div>
+          <button class="coupon-btn" data-coupon="配件尝鲜券 · 满399减50">立即领取</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 品牌理念 -->
+    <section class="brand-banner container">
+      <div>
+        <span class="eyebrow light">WHY GEEK SELECT</span>
+        <h2>把好东西，交给懂生活的人</h2>
+        <p>我们只挑选真正值得买的数码产品。参数透明、价格实在、售后省心。</p>
+      </div>
+      <div class="brand-stats">
+        <div><strong>50+</strong><span>精选品牌</span></div>
+        <div><strong>10万+</strong><span>满意用户</span></div>
+        <div><strong>4.9</strong><span>用户评分</span></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand-light" href="#top">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg></span>
+          <span class="brand-text"><strong>极客选品</strong><small>GEEK SELECT</small></span>
+        </a>
+        <p>专注数码科技好物，让每一次选择都物有所值。</p>
+      </div>
+      <div class="footer-col"><h4>购物指南</h4><a href="#products">选购商品</a><a href="#promotions">优惠活动</a><a href="#categories">商品分类</a></div>
+      <div class="footer-col"><h4>服务支持</h4><a href="#">配送说明</a><a href="#">退换货政策</a><a href="#">售后服务</a></div>
+      <div class="footer-col"><h4>关于我们</h4><a href="#">品牌故事</a><a href="#">联系我们</a><a href="#">加入我们</a></div>
+      <div class="footer-col"><h4>关注我们</h4><p>客服热线 400-800-1234</p><p>工作日 9:00 - 21:00</p></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 极客选品 GEEK SELECT. 演示站点，页面数据仅保存在本地浏览器。</span></div>
+  </footer>
+
+  <!-- 登录 / 注册弹窗 -->
+  <div class="modal-overlay hidden" id="authOverlay">
+    <div class="auth-modal" role="dialog" aria-modal="true" aria-label="登录或注册">
+      <button class="modal-close" id="authClose" aria-label="关闭">&times;</button>
+      <div class="auth-head">
+        <span class="auth-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5 12 3l8 4.5v9L12 21l-8-4.5v-9Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg></span>
+        <h2 id="authTitle">欢迎回来</h2>
+        <p id="authSubtitle">登录后即可享受专属优惠与购物车同步</p>
+      </div>
+      <div class="auth-tabs">
+        <button class="active" data-mode="login">登录</button>
+        <button data-mode="register">注册</button>
+      </div>
+      <form id="authForm" autocomplete="off">
+        <label class="field"><span>手机号 / 用户名</span><input type="text" id="authAccount" placeholder="请输入手机号或用户名" required></label>
+        <label class="field"><span>密码</span><input type="password" id="authPassword" placeholder="至少 6 位密码" required minlength="6"></label>
+        <p class="form-error hidden" id="authError"></p>
+        <button type="submit" class="btn btn-primary btn-block" id="authSubmit">登录</button>
+      </form>
+      <p class="auth-tip">演示提示：可直接注册新账号，或使用体验账号 <b>demo</b> / <b>123456</b> 登录。</p>
+    </div>
+  </div>
+
+  <!-- 购物车抽屉 -->
+  <div class="drawer-overlay hidden" id="drawerOverlay">
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-label="购物车">
+      <div class="drawer-head">
+        <h2>我的购物车 <span id="drawerCount">(0)</span></h2>
+        <button class="modal-close" id="drawerClose" aria-label="关闭购物车">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="drawer-foot">
+        <div class="cart-total"><span>合计</span><strong id="cartTotal">¥0</strong></div>
+        <p class="cart-note">演示站点不会产生真实支付</p>
+        <button class="btn btn-primary btn-block" id="checkoutBtn">去结算</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
