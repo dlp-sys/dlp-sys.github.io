@@ -38,9 +38,10 @@ jobs:
 
       - name: Assemble site
         run: |
-          mkdir -p _site/blog
+          mkdir -p _site/blog _site/e_commerce_website-src
           cp index.html _site/index.html
           cp -r blog-src/public/. _site/blog/
+          cp -r e_commerce_website-src/. _site/e_commerce_website-src/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
